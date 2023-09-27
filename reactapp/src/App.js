@@ -3,7 +3,18 @@ import './App.css';
 import React,{useState} from 'react';
 
 function App() {
-  const
+  const[name,setName]=useState('');
+  const[greeting,setgreeting]=useState('');
+  const handlechange=(e)=>{
+    setName(e.target.value);
+  };
+  const handleSubmit=(e)=>{
+    e.preventDefault();
+  }
+  if(name.trim()!=='')
+  {
+    setgreeting('Hello,${name}!');
+  }
   return (
     <div className="App">
       <header className="App-header">
